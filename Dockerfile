@@ -3,4 +3,4 @@ COPY . /opt/app
 ENV MAVEN_CONFIG=/tmp/
 RUN mvn install -Duser.home=$MAVEN_CONFIG -f /opt/app/pom.xml
 EXPOSE 8080
-CMD ["java","-jar","/opt/app/target/app.jar"]
+CMD ["java","-Xmx256m","-jar","/opt/app/target/app.jar"]
